@@ -1,9 +1,10 @@
 import React from 'react'
+import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
-    <div>        
+    <>        
         <nav className="navbar">
             <div className="flex md:justify-between nav-tool">
                 {/* logo */}
@@ -14,17 +15,23 @@ export const Navbar = () => {
                 </Link>
             
                 {/* Links */}
-                <ul className="md:mt-3 mt-5">
-                    <li>
+                <ul>
+                    <li className='mt-3 flex justify-center items-center'>
                         <Link 
                             to="/cart" 
-                            className="text-xl uppercase text-lightColor font-bold font-sans"
-                        > Cart</Link>
+                            className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans md:mr-10"
+                        ><FaShoppingCart /> Cart</Link>
+                    </li>
+                    <li className='mt-3 flex justify-center items-center'>
+                        <Link 
+                            to="/login" 
+                            className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans"
+                        ><FaUser /> Sign In</Link>
                     </li>
                 </ul>
 
         </div>
         </nav>
-    </div>
+    </>
   )
 }

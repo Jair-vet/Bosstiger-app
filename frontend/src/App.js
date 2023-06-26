@@ -1,15 +1,15 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
-import { HomePage } from './screens/HomePage';
+import { Outlet } from 'react-router-dom';
  
-export const App = () => {
+const App = () => {
   return (
     <div>
       <Navbar />
 
       <main className='container md:pt-28 pt-48'>
-        <HomePage />
+          <Outlet />
       </main>
 
       <Footer />
@@ -17,3 +17,5 @@ export const App = () => {
     </div>
   )
 }
+
+export default App;

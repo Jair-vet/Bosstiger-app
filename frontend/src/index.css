@@ -62,17 +62,13 @@ main {
     display: flex;
 }
   
-.navbar ul a {
-    margin-left: 30px;
-    margin-top: 20px;
-}
 ul {
     list-style-type: none;
 }
   
 .navbar ul a:hover {
     color: var(--primary-color);
-    border-bottom: 2px var(--primary-color) solid;
+    border-bottom: 1px var(--primary-color) solid;
 }
 @media (max-width: 768px) {  
   .nav-tool {
@@ -83,11 +79,12 @@ ul {
       align-items: center;
   }
   .navbar {
-    height: 150px;
+    height: 190px;
   }
   .navbar ul {
     flex-direction: column-reverse;
     gap: 15px;
+    margin: 15px;
   }
 }
 
