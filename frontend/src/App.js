@@ -1,6 +1,7 @@
 import React from 'react';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
+import { HomePage } from './screens/HomePage';
  
 export const App = () => {
   return (
@@ -8,7 +9,7 @@ export const App = () => {
       <Navbar />
 
       <main className='container md:pt-28 pt-48'>
-        <h1>Welcome</h1>
+        <HomePage />
       </main>
 
       <Footer />
