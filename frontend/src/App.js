@@ -1,7 +1,11 @@
-import React from 'react'
-
+import React from 'react';
+import { Navbar } from './components/Navbar';
+ 
 export const App = () => {
   return (
-    <p>Welcome To PropShop</p>
+    <div>
+      <Navbar />
+      
+    </div>
   )
 }
