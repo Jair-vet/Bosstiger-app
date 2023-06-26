@@ -6,8 +6,9 @@ export const App = () => {
   return (
     <div>
       <Navbar />
-      <main>
 
+      <main className='container md:pt-28 pt-48'>
+        <h1>Welcome</h1>
       </main>
 
       <Footer />
