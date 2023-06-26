@@ -3,12 +3,20 @@ import ReactDOM from 'react-dom/client';
 import {createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
 import App from './App';
-
+import ErrorPage from "./error-page";
+import { HomePage } from './screens/HomePage';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />
+    element: <App />,
+    errorElement: <ErrorPage />,
+    // children: [
+    //   {
+    //     path: "/Home",
+    //     element: <HomePage />,
+    //   },
+    // ],
   },
 ]);
 
