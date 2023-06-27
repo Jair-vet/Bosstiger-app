@@ -13,7 +13,7 @@ module.exports = {
       lightColor: '#f4f4f4',
       greenBorder: '#1CB698',
       veryDarkBlue: 'hsl(229, 31%, 21%)',
-      yellowSpan: '#ceaa0d',
+      yellowSpan: '#f8e825',
       coverColor: '#2b6a7ef7',
       buttonsColor: '#133B5C',
       buttonColor: '#1D2D50',
@@ -22,6 +22,8 @@ module.exports = {
       redColor: '#B42B51',
       grayColor: '#BDCDD6',
       skyblueColor: '#6096B4',
+      grayColor: '#7D7D8C',
+      greenPrice: '#4BAA1E',
     },
     fontFamily: {
       sans: ['Barlow Semi Condensed', 'sans-serif'],
