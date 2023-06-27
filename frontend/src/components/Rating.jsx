@@ -1,58 +1,54 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
 
 export const Rating = ({ value }) => {
   return (
-    <div className='text-end text-sm'>
-        <span className='ml-1 text-yellowSpan '>
-            <i className={
+    <div className='flex justify-end items-center text-md'>
+        <span className='ml-1 text-yellowSpan'>
+            {
                 value >= 1
-                ? 'fas fa-star'
-                : value >= 0.5
-                ? 'fas fa-star-half-alt'
-                : 'far fa-star'
+                ? (<FaStar />)
+                : value >= 0.5 
+                ? (<FaStarHalfAlt />)
+                : (<FaRegStar />)
             }
-            ></i>
         </span>
         <span className='ml-1 text-yellowSpan'>
-            <i className={
-                value >= 2 
-                ? 'fas fa-star' 
+            {
+                value >= 1
+                ? (<FaStar />)
                 : value >= 1.5 
-                ? 'fas fa-star-half-alt' 
-                : 'far fa-star'
-                }
-            ></i>
+                ? (<FaStarHalfAlt />)
+                : (<FaRegStar />)
+            }
         </span>
         <span className='ml-1 text-yellowSpan'>
-            <i className={
-                value >= 3 
-                ? 'fas fa-star' 
+            {
+                value >= 3
+                ? (<FaStar />)
                 : value >= 2.5 
-                ? 'fas fa-star-half-alt' 
-                : 'far fa-star'
-                }
-            ></i>
+                ? (<FaStarHalfAlt />)
+                : (<FaRegStar />)
+            }
         </span>
         <span className='ml-1 text-yellowSpan'>
-            <i className={
-                value >= 4 
-                ? 'fas fa-star' 
+            {
+                value >= 4
+                ? (<FaStar />)
                 : value >= 3.5 
-                ? 'fas fa-star-half-alt' 
-                : 'far fa-star'
-                }
-            ></i>
+                ? (<FaStarHalfAlt />)
+                : (<FaRegStar />)
+            }
         </span>
         <span className='ml-1 text-yellowSpan'>
-            <i className={
-                value >= 5 
-                ? 'fas fa-star' 
+            {
+                value >= 5
+                ? (<FaStar />)
                 : value >= 4.5 
-                ? 'fas fa-star-half-alt' 
-                : 'far fa-star'
-                }
-            ></i>
+                ? (<FaStarHalfAlt />)
+                : (<FaRegStar />)
+            }
         </span>
     </div>
   )
