@@ -14,9 +14,9 @@ export const Product = ({ product }) => {
                     variant="top" 
                     className='object-cover rounded-t-md w-full h-[200px]'
                 ></img>
-                <div className='shadow-lg  rounded-b-md'>
-                    <div className='text-center h-20 p-3'>
-                        <p className='text-buttonsColor '>{product.name}</p> 
+                <div className='shadow-xl  rounded-b-lg'>
+                    <div className='text-center p-3'>
+                        <p className='text-buttonsColor font-bold product-title'>{product.name}</p> 
                     </div>
                     <div className='flex justify-around'>
                         <div> 

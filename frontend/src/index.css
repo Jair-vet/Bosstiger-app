@@ -132,6 +132,11 @@ ul {
    duration-150 bg-lightColor font-mono hover:bg-buttonColor hover:text-lightColor
 }
 
+.product-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 /* Footer */
 .footerEnlces {
     @apply uppercase hover:text-[#333] hover:border-b-2 hover:border-b-[#333] border-b-2 border-b-[#3195ff]
