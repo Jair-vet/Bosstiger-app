@@ -12,16 +12,21 @@ export const Product = ({ product }) => {
                 <img 
                     src={product.image} 
                     variant="top" 
-                    className='object-cover rounded-md w-full h-[200px]'
+                    className='object-cover rounded-t-md w-full h-[200px]'
                 ></img>
-                <div className='flex justify-around'>
-                    <div> 
-                        <p className='text-xl md:text-2xl text-greenPrice'>${product.offert}</p>
-                        <p className='md:text-md text-grayColor line-through'>${product.price}</p>
+                <div className='shadow-lg  rounded-b-md'>
+                    <div className='text-center h-20 p-3'>
+                        <p className='text-buttonsColor '>{product.name}</p> 
                     </div>
-                    <Rating 
-                        value={product.rating}
-                    />
+                    <div className='flex justify-around'>
+                        <div> 
+                            <p className='text-xl md:text-2xl text-greenPrice'>${product.offert}</p>
+                            <p className='md:text-md text-grayColor line-through'>${product.price}</p>
+                        </div>
+                        <Rating 
+                            value={product.rating}
+                        />
+                    </div>
                 </div>
             </Link>
         </div>
