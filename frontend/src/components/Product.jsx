@@ -1,7 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
-// import { ProductName } from './ProductName'
 import { Rating } from './Rating'
 
 export const Product = ({ product }) => {

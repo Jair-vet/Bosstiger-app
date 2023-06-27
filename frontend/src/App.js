@@ -10,7 +10,7 @@ const App = () => {
     <div>
       <Navbar />
 
-      <main className='container md:pt-28 pt-48'>
+      <main className='container md:pt-0 pt-36'>
         <Routes>
               <Route path='/' element={ <HomePage />} exact />
               <Route path='/product/:id' element={ <ProductScreen />} />
