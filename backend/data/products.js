@@ -1,6 +1,6 @@
 const products = [
     {
-      _id: '1',
+      // _id: '1',
       name: 'Botas de Piel de Serpiente BossTiger',
       image: '/images/botas.png',
       description:
@@ -13,7 +13,7 @@ const products = [
       numReviews: 5,
     },
     {
-      _id: '2',
+      // _id: '2',
       name: 'Tenis de Piel de Serpiente con Calavera de color',
       image: '/images/tenis.png',
       description: 'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
@@ -25,7 +25,7 @@ const products = [
       numReviews: 5,
     },
     {
-      _id: '3',
+      // _id: '3',
       name: 'Zapato negro Elegante de Piel de serpiente',
       image: '/images/zapatos.png',
       description:
@@ -38,7 +38,7 @@ const products = [
       numReviews: 4.5,
     },
     {
-      _id: '4',
+      // _id: '4',
       name: 'Funda de Piel con llavero',
       image: '/images/funda.png',
       description:
@@ -51,7 +51,7 @@ const products = [
       numReviews: 5,
     },
     {
-      _id: '5',
+      // _id: '5',
       name: 'Llaveros de piel diferentes colores',
       image: '/images/variosLlaveros.png',
       description:
@@ -64,7 +64,7 @@ const products = [
       numReviews: 5,
     },
     {
-      _id: '6',
+      // _id: '6',
       name: 'Funda de Piel Roja con llavero personalizado',
       image: '/images/fundaRoja.png',
       description:
