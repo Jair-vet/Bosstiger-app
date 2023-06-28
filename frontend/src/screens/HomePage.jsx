@@ -10,14 +10,20 @@ export const HomePage = () => {
       { 
         isLoading 
           ? 
-            (<h2>Loading...</h2>) 
+            (
+              <div className='h-screen flex w-full items-center justify-center'>
+                <h2 className='text-3xl text-center font-bold text-darkColor'>Loading...</h2>
+              </div>
+            ) 
           : error 
           ? 
-            (<div className='h-screen items-center w-full justify-center'>
-              <p className='text-3xl text-darkColor'>
-                { error?.data.message || error.error }
-              </p>
-            </div>) 
+            (
+              <div className='h-screen flex w-full items-center justify-center'>
+                  <p className='text-3xl text-center font-bold text-redColor'>
+                  { error?.data.message || error.error }
+                  </p>
+              </div>
+            ) 
           : 
             (<>
               <div className='p-2 container md:pt-26 pt-36'>
