@@ -1,13 +1,23 @@
-import {  Link, useParams } from 'react-router-dom'
+import {  Link, useNavigate, useParams } from 'react-router-dom'
 import { Rating } from '../components/Rating'
 import { useGetProductDetailsQuery } from '../slices/productsApiSlice'
+import { useState } from 'react'
+import { addToCart } from '../slices/cartSlice'
+import { useDispatch } from 'react-redux'
 
 export const ProductScreen = () => {
     
     const { id: productId } = useParams()
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const [qty, setQty] = useState(1)
+
     const { data: product, isLoading, error } = useGetProductDetailsQuery( productId )
 
-    
+    const addToCartHandler = () => {
+        dispatch(addToCart({ ...product, qty }))
+        navigate('/cart')
+    }
 
     return (
         <>     
@@ -83,16 +93,35 @@ export const ProductScreen = () => {
                                             </button>
 
                                             : 
-                                            <button className="md:w-full transition-all duration-150 bg-buttonsColor uppercase font-sans border-b-8 border-b-buttonColor
-                                                            rounded-lg group-hover:border-t-8 border-t-buttonsColor
-                                                            group-hover:border-b-0 group-hover:bg-buttonsColor group-hover:border-t-buttonColor
-                                                            group-hover:shadow-lg">
+                                            <button 
+                                                className="md:w-full transition-all duration-150 bg-buttonsColor uppercase font-sans border-b-8 border-b-buttonColor
+                                                        rounded-lg group-hover:border-t-8 border-t-buttonsColor
+                                                        group-hover:border-b-0 group-hover:bg-buttonsColor group-hover:border-t-buttonColor
+                                                        group-hover:shadow-lg"
+                                                onClick={addToCartHandler}
+                                            >
                                                 <div className="px-8 py-4 duration-150 bg-buttonsColor rounded-lg group-hover:bg-buttonsColor border-t-buttonsColor">
                                                     Add to cart
                                                 </div>
                                             </button>
                                         }
                                         </div>
+                                        {product.countInStock > 0 && (
+                                            <div className="flex justify-center">
+                                                <select 
+                                                    className="w-32 bg-grayColor text-center rounded-md text-xl
+                                                         focus:outline-none focus:ring focus:ring-violetColor"
+                                                    value={qty}
+                                                    onChange={(e) => setQty(Number(e.target.value)) }
+                                                >
+                                                    { [...Array(product.countInStock).keys()].map((x) => (
+                                                        <option key={ x + 1} value={ x + 1 }>
+                                                            { x + 1 }
+                                                        </option>
+                                                    )) }
+                                                </select>
+                                            </div>
+                                        )}
 
                                     
 
