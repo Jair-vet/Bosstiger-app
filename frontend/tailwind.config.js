@@ -24,6 +24,8 @@ module.exports = {
       skyblueColor: '#6096B4',
       grayColor: '#7D7D8C',
       greenPrice: '#4BAA1E',
+      violetColor: '#E635EF',
+      blueDark: '#194261',
     },
     fontFamily: {
       sans: ['Barlow Semi Condensed', 'sans-serif'],
