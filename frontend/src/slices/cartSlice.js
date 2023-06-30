@@ -22,12 +22,17 @@ const cartSlice = createSlice({
       
             return updateCart(state, item);
         },
+
+        removeFromCart: (state, action) => {
+          state.cartItems = state.cartItems.filter((x) => x._id !== action.payload);
+          return updateCart(state);
+        },
     }
 })
 
 export const {
     addToCart,
-    // removeFromCart,
+    removeFromCart,
     // saveShippingAddress,
     // savePaymentMethod,
     // clearCartItems,
