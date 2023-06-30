@@ -7,6 +7,7 @@ import ErrorPage from "./error-page";
 import { ProductScreen } from './screens/ProductScreen';
 import { Provider } from 'react-redux';
 import store from './store';
+import { CartScreen } from './screens/CartScreen';
 
 const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
       {
         path: "/product/:id",
         element: <ProductScreen />,
+      },
+      {
+        path: "/cart",
+        element: <CartScreen />,
       },
     ],
   },

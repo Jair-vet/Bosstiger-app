@@ -4,22 +4,24 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { HomePage } from './screens/HomePage';
 import { ProductScreen } from './screens/ProductScreen';
+import { CartScreen } from './screens/CartScreen';
  
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
 
-      <main className='container md:pt-0 pt-36'>
-        <Routes>
-              <Route path='/' element={ <HomePage />} exact />
-              <Route path='/product/:id' element={ <ProductScreen />} />
-        </Routes>
-      </main>
+        <div className='md:pt-0 pt-36 overflow-x-hidden h-screen'>
+          <Routes>
+                <Route path='/' element={ <HomePage />} exact />
+                <Route path='/product/:id' element={ <ProductScreen />} />
+                <Route path='/cart' element={ <CartScreen />} />
+          </Routes>
+        </div>
 
       <Footer />
       
-    </div>
+    </>
   )
 }
 
