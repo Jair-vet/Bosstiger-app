@@ -15,7 +15,10 @@ export const CartScreen = () => {
         dispatch(addToCart({ ...product, qty }));
     };
 
-    
+    const removeFromCartHandler = (id) => {
+        dispatch(removeFromCart(id));
+      };
+
 
   return (
     <section className="container md:pt-26 pt-36 flex items-center justify-center flex-col">
@@ -70,10 +73,12 @@ export const CartScreen = () => {
                                                 )) }
                                             </select>
                                         </div>
+                                        {/* Remove Button */}
                                         <div className="flex items-center p-4">
                                             <button 
                                                 type="button"
                                                 className="text-2xl duration-200 text-redColor hover:text-redColorLight hover:scale-125"
+                                                onClick={() => removeFromCartHandler(item._id)}
                                             >
                                                 <FaTrash />
                                             </button>
@@ -83,8 +88,10 @@ export const CartScreen = () => {
                             </ol>
                         ))}
                     </div>
+                    {/* Subtotal Container */}
                     <div className="md:w-2/4 rounded-xl mb-[100px] shadow-xl outline-none ring ring-coverColor">
                         <h2 className="text-2xl m-2 text-center text-secondaryColor">Subtotal (<span>{cartItems.reduce((acc, item) => acc + item.qty, 0)}) items</span></h2>
+                        {/* Total */}
                         <p className="text-center text-greenColor text-lg">
                             <span className="text-secondaryColor">Total: </span>
                             $ { cartItems
@@ -92,6 +99,7 @@ export const CartScreen = () => {
                                     .toFixed(2)    
                             }
                         </p>
+                        {/* Proceed button */}
                         <div className="flex items-center justify-center">
                             <button 
                                 className={cartItems === 0 
