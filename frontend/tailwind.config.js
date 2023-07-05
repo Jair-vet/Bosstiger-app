@@ -30,7 +30,7 @@ module.exports = {
       blueDark: '#194261',
       bgColor: '#ADADAD',
       bgGray: '#B8B8B8',
-      bgTextField: '#B8C0C8',
+      bgTextField: '#CBCDCE',
     },
     fontFamily: {
       sans: ['Barlow Semi Condensed', 'sans-serif'],

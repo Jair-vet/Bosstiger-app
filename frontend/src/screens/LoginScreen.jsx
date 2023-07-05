@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 
 import { useLoginMutation } from '../slices/usersApiSlice';
-// import { setCredentials } from '../slices/authSlice';
-// import { toast } from 'react-toastify';
+import { setCredentials } from '../slices/authSlice';
+import { toast } from 'react-toastify';
 
 
 export const LoginScreen = () => {
@@ -32,14 +32,13 @@ export const LoginScreen = () => {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        // try {
-        //     const res = await login({ email, password }).unwrap();
-        //     dispatch(setCredentials({ ...res }));
-        //     navigate(redirect);
-        // } catch (err) {
-        //     toast.error(err?.data?.message || err.error);
-        // }
-        console.log('sumbit');
+        try {
+            const res = await login({ email, password }).unwrap();
+            dispatch(setCredentials({ ...res }));
+            navigate(redirect);
+        } catch (err) {
+            toast.error(err?.data?.message || err.error);
+        }
     };
 
   return (
@@ -50,9 +49,9 @@ export const LoginScreen = () => {
             <div className="flex flex-col gap-3 items-center">
                 {/* Email */}
                 <div className="flex flex-col w-full">
-                    <label className="text-secondaryColor uppercase">Email</label>
+                    <label className="text-lightColor uppercase">Email</label>
                     <input 
-                        className="bg-bgTextField p-3 rounded-md mb-3 shadow-md focus:outline-none focus:ring 
+                        className="bg-bgTextField text-secondaryColor p-3 rounded-md mb-3 shadow-md focus:outline-none focus:ring 
                             focus:ring-primaryColor"
                         placeholder="Enter email"
                         type="email"
@@ -61,9 +60,9 @@ export const LoginScreen = () => {
                 </div>
                 {/* Password */}
                 <div className="flex flex-col w-full">
-                    <label className="text-secondaryColor uppercase">Password</label>
+                    <label className="text-lightColor uppercase">Password</label>
                     <input 
-                        className="bg-bgTextField p-3 rounded-md mb-3 shadow-md focus:outline-none focus:ring 
+                        className="bg-bgTextField text-secondaryColor p-3 rounded-md mb-3 shadow-md focus:outline-none focus:ring 
                             focus:ring-primaryColor"
                         placeholder="Enter password"
                         type="password"

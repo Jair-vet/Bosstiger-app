@@ -6,11 +6,14 @@ import { HomePage } from './screens/HomePage';
 import { ProductScreen } from './screens/ProductScreen';
 import { CartScreen } from './screens/CartScreen';
 import { LoginScreen } from './screens/LoginScreen';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
  
 const App = () => {
   return (
     <>
+      <ToastContainer />
       <Navbar />
 
         <div className='md:pt-0 pt-36 overflow-x-hidden h-screen'>
