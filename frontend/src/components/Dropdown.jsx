@@ -8,10 +8,10 @@ function classNames(...classes) {
 
 export const Dropdown = ({user}) => {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block md:text-left text-center">
         <div>
         <Menu.Button className="inline-flex w-full justify-center px-3 py-2 text-xl uppercase font-semibold shadow-sm">
-            Options
+            { user.name }
             <ChevronDownIcon className="-mr-3 h-6 w-8" aria-hidden="true" />
         </Menu.Button>
         </div>
@@ -25,7 +25,7 @@ export const Dropdown = ({user}) => {
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
         >
-        <Menu.Items className="absolute right-0 z-10 w-56 origin-top-right rounded-md bg-bgColor shadow-lg">
+        <Menu.Items className="md:absolute md:right-0 md:z-10 w-56 origin-top-right rounded-md bg-bgColor shadow-lg">
             <div className="py-1 hover:text-lightColor">
                 <Menu.Item>
                     {({ active }) => (
@@ -33,7 +33,7 @@ export const Dropdown = ({user}) => {
                         href="#"
                         className={classNames(
                         active ? 'text-primaryColor' : 'text-secondaryColor ',
-                            'block px-4 py-2 text-sm uppercase'
+                            'block px-4 py-2 text-sm uppercase hover:text-lightColor'
                         )}
                     >
                         Profile
@@ -49,7 +49,7 @@ export const Dropdown = ({user}) => {
                             type="submit"
                             className={classNames(
                                 active ? 'text-primaryColor' : 'text-secondaryColor',
-                                'block w-full px-4 py-2 text-left text-sm uppercase hover:text-lightColor'
+                                'block w-full px-4 py-2 md:text-left text-center text-sm uppercase hover:text-lightColor'
                             )}
                         >
                         Sign out

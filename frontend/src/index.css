@@ -66,7 +66,7 @@ ul {
       align-items: center;
   }
   .navbar {
-    height: 190px;
+    height: 210px;
   }
   .navbar ul {
     flex-direction: column-reverse;

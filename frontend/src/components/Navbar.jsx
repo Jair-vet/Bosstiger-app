@@ -16,57 +16,63 @@ export const Navbar = () => {
   return (
     <>        
         <nav className="navbar">
-            <div className="flex md:justify-between nav-tool">
-                {/* logo */}
-                <Link to="/" className="flex items-center">
-                    <h1 className='text-4xl text-lightColor font-sans font-normal mt-2'>Boos
+            {/* logo */}
+            <div className='text-center'>
+                <Link to="/">
+                    <h1 className='text-4xl text-lightColor font-sans font-normal'>Boos
                         <span className='text-primaryColor font-bold'>Tiger</span>
                     </h1>
                 </Link>
+            </div>
             
+            <div className="md:flex md:flex-row md:justify-between flex flex-col justify-between">
                 {/* Links */}
-                <ul>
-                    <li className='mt-3 flex justify-center items-center'>
-                        <Link 
-                            to="/cart" 
-                            className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans md:mr-10"
-                            >
-                            {
-                                cartItems.length > 0 && (
-                                    <div className='relative mr-[-16px] flex justify-center items-center'>
-                                        <button className=' text-primaryColor text-xl rounded-full
-                                             px-2'>
-                                            { cartItems.reduce((a, c) => a + c.qty, 0) }
-                                        </button>
-                                    </div>
-                                )
-                            }
-                            <FaShoppingCart /> Cart
-                        </Link>
-                    </li>
-                    <li className='mt-3 flex justify-center items-center'>
-                        <Link 
-                            to="/login" 
-                            className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans"
-                        ><FaUser /> Sign In</Link>
-                    </li>
-                    <div className='mt-3 flex justify-center items-center'>
-                        { userInfo 
-                            ? (
-                                <>
-                                  
-                                </>
-                            )
-                            : (
-                                <>
-                                    <Dropdown 
-                                        user={userInfo}
-                                    />
-                                </>
-                            )
-                        }
-                    </div>
-                </ul>
+                <div className='flex justify-center items-center'>
+                    <ul>
+                        <li className='flex justify-center items-center'>
+                            <Link 
+                                to="/cart" 
+                                className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans md:mr-10"
+                                >
+                                {
+                                    cartItems.length > 0 && (
+                                        <div className='relative mr-[-16px] flex justify-center items-center'>
+                                            <button className=' text-primaryColor text-xl rounded-full
+                                                px-2'>
+                                                { cartItems.reduce((a, c) => a + c.qty, 0) }
+                                            </button>
+                                        </div>
+                                    )
+                                }
+                                <FaShoppingCart /> Cart
+                            </Link>
+                        </li>
+                        <li className='flex justify-center items-center'>
+                            <Link 
+                                to="/login" 
+                                className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans"
+                            ><FaUser /> Sign In</Link>
+                        </li>
+                    </ul>
+                </div>
+                <div className='flex justify-center items-center'>
+                    { userInfo 
+                        ? (
+                            <>
+                                <Dropdown 
+                                    user={userInfo}
+                                />
+                            </>
+                        )
+                        : (
+                            <>
+                                <Dropdown 
+                                    user={userInfo}
+                                />
+                            </>
+                        )
+                    }
+                </div>
 
         </div>
         </nav>
