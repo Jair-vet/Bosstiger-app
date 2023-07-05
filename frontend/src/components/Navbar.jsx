@@ -66,9 +66,7 @@ export const Navbar = () => {
                         )
                         : (
                             <>
-                                <Dropdown 
-                                    user={userInfo}
-                                />
+                               
                             </>
                         )
                     }
