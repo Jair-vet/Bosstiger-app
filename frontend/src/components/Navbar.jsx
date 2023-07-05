@@ -2,10 +2,16 @@ import React from 'react'
 import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux'
+import { Dropdown } from './Dropdown';
 
 export const Navbar = () => {
 
     const { cartItems } = useSelector((state) => state.cart)
+    const { userInfo } = useSelector((state) => state.auth)
+
+    const logoutHandler = () => {
+        console.log('Logout');
+    }
 
   return (
     <>        
@@ -44,6 +50,22 @@ export const Navbar = () => {
                             className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans"
                         ><FaUser /> Sign In</Link>
                     </li>
+                    <div className='mt-3 flex justify-center items-center'>
+                        { userInfo 
+                            ? (
+                                <>
+                                  
+                                </>
+                            )
+                            : (
+                                <>
+                                    <Dropdown 
+                                        user={userInfo}
+                                    />
+                                </>
+                            )
+                        }
+                    </div>
                 </ul>
 
         </div>

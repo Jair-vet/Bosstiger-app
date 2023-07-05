@@ -73,12 +73,13 @@ export const LoginScreen = () => {
                     type="submit"
                     className='w-1/2 mt-3 bg-secondaryColor uppercase rounded-md py-2 text-center shadow-xl 
                             transition duration-500 hover:-translate-y-2 hover:bg-primaryColor'
+                    disabled={ isLoading }
                 >
                     Sign In
                 </button>
 
                 <div className='mt-2 p-3'>
-                    <p className='text-secondaryColor'>Nuevo Usuario <Link to='/resgister' className='uppercase duration-300 hover:text-primaryColor underline'>register</Link></p>
+                    <p className='text-secondaryColor'>Nuevo Usuario <Link to={ redirect ? `/register?redirect=${redirect}` : '/register' } className='uppercase duration-300 hover:text-primaryColor underline'>register</Link></p>
                 </div>
             </div>
         </form>

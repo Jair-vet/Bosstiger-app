@@ -1,0 +1,65 @@
+import { Fragment } from 'react'
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+export const Dropdown = ({user}) => {
+  return (
+    <Menu as="div" className="relative inline-block text-left">
+        <div>
+        <Menu.Button className="inline-flex w-full justify-center px-3 py-2 text-xl uppercase font-semibold shadow-sm">
+            Options
+            <ChevronDownIcon className="-mr-3 h-6 w-8" aria-hidden="true" />
+        </Menu.Button>
+        </div>
+
+        <Transition
+            as={Fragment}
+            enter="transition ease-out duration-100"
+            enterFrom="transform opacity-0 scale-95"
+            enterTo="transform opacity-100 scale-100"
+            leave="transition ease-in duration-75"
+            leaveFrom="transform opacity-100 scale-100"
+            leaveTo="transform opacity-0 scale-95"
+        >
+        <Menu.Items className="absolute right-0 z-10 w-56 origin-top-right rounded-md bg-bgColor shadow-lg">
+            <div className="py-1 hover:text-lightColor">
+                <Menu.Item>
+                    {({ active }) => (
+                    <a
+                        href="#"
+                        className={classNames(
+                        active ? 'text-primaryColor' : 'text-secondaryColor ',
+                            'block px-4 py-2 text-sm uppercase'
+                        )}
+                    >
+                        Profile
+                    </a>
+                    )}
+                </Menu.Item>
+                
+                
+                <form method="POST" action="#">
+                    <Menu.Item>
+                    {({ active }) => (
+                        <a
+                            type="submit"
+                            className={classNames(
+                                active ? 'text-primaryColor' : 'text-secondaryColor',
+                                'block w-full px-4 py-2 text-left text-sm uppercase hover:text-lightColor'
+                            )}
+                        >
+                        Sign out
+                        </a>
+                    )}
+                    </Menu.Item>
+                </form>
+            </div>
+        </Menu.Items>
+        </Transition>
+    </Menu>
+  )
+}
