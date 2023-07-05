@@ -28,7 +28,9 @@ module.exports = {
       greenPrice: '#4BAA1E',
       violetColor: '#E635EF',
       blueDark: '#194261',
-      bgColor: '#d5d4d4',
+      bgColor: '#ADADAD',
+      bgGray: '#B8B8B8',
+      bgTextField: '#B8C0C8',
     },
     fontFamily: {
       sans: ['Barlow Semi Condensed', 'sans-serif'],
