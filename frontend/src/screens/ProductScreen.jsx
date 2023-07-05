@@ -53,7 +53,7 @@ export const ProductScreen = () => {
                             {/* <!-- Global Container --> */}
                             <div className="flex items-center justify-center mt-7 md:mt-0">
                             {/* <!-- Card Container --> */}
-                            <div className="flex flex-col md:p-16 md:m-6 space-y-10 rounded-2xl shadow-2xl 
+                            <div className="flex flex-col md:p-16 md:m-6 space-y-18 rounded-2xl shadow-2xl 
                                         md:flex-row  md:space-x-10  bg-veryDarkBlue m-9">
                                 {/* <!-- Image Div --> */}
                                 <div className='flex items-center mt-7 md:mt-0'>
