@@ -105,7 +105,7 @@ export const RegisterScreen = () => {
                             transition duration-500 hover:-translate-y-2 hover:bg-primaryColor'
                     disabled={ isLoading }
                 >
-                    Sign In
+                    Register
                 </button>
 
                 <div className='mt-2 p-3 flex'>
