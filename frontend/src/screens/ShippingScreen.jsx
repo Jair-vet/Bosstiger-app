@@ -92,7 +92,7 @@ export const ShippingScreen = () => {
                 </div>
             </form>
         </FormContainer>
-        <CheckoutSteps    />
+        <CheckoutSteps step1 step2 />
     </>
   )
 }
