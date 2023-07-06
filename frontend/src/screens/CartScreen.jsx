@@ -109,7 +109,7 @@ export const CartScreen = () => {
                                 disabled={cartItems === 0}
 
                             >
-                                Proceed To Checkout
+                               Proceder a Pagar
                             </button>
                         </div>
                     </div>

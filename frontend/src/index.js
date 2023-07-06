@@ -10,6 +10,7 @@ import store from './store';
 import { CartScreen } from './screens/CartScreen';
 import { LoginScreen } from './screens/LoginScreen';
 import { RegisterScreen } from './screens/RegisterScreen';
+import { ShippingScreen } from './screens/ShippingScreen';
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <RegisterScreen />,
+      },
+      {
+        path: "/shipping",
+        element: <ShippingScreen />,
       },
     ],
   },
