@@ -37,15 +37,15 @@ export const PaymentScreen = () => {
                     <input 
                         
                     />
+                    <button
+                        type="submit"
+                        className='w-1/2 mt-3 bg-secondaryColor uppercase rounded-md py-2 text-center shadow-xl 
+                                transition duration-500 hover:-translate-y-2 hover:bg-primaryColor'
+                        // disabled={ isLoading }
+                    >
+                        Continue
+                    </button>
                 </form>
-                <button
-                    type="submit"
-                    className='w-1/2 mt-3 bg-secondaryColor uppercase rounded-md py-2 text-center shadow-xl 
-                            transition duration-500 hover:-translate-y-2 hover:bg-primaryColor'
-                    // disabled={ isLoading }
-                >
-                    Continue
-                </button>
             </FormContainer>
             <CheckoutSteps step1 step2 step3 />
         </>
