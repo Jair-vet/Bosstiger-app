@@ -11,6 +11,7 @@ import { CartScreen } from './screens/CartScreen';
 import { LoginScreen } from './screens/LoginScreen';
 import { RegisterScreen } from './screens/RegisterScreen';
 import { ShippingScreen } from './screens/ShippingScreen';
+import { PaymentScreen } from './screens/PaymentScreen';
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/shipping",
         element: <ShippingScreen />,
+      },
+      {
+        path: "/payment",
+        element: <PaymentScreen />,
       },
     ],
   },

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import FormContainer from '../components/FormContainer';
-import CheckoutSteps from '../components/CheckoutSteps';
+import { FormContainer } from '../components/FormContainer';
 import { savePaymentMethod } from '../slices/cartSlice';
+import { CheckoutSteps } from '../components/CheckoutSteps';
 
 
 export const PaymentScreen = () => {
@@ -30,7 +30,7 @@ export const PaymentScreen = () => {
 
     return (
         <>
-            <div>
+            <FormContainer>
                 <h1>Payment Method</h1>
                 <form onSubmit={submitHandler}>
                     <label>Select Method</label>
@@ -46,8 +46,8 @@ export const PaymentScreen = () => {
                 >
                     Continue
                 </button>
-                <CheckoutSteps step1 step2 step3/>
-            </div>
+            </FormContainer>
+            <CheckoutSteps step1 step2 step3 />
         </>
     )
 }
