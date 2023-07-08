@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-// import Message from '../components/Message';
 import { useCreateOrderMutation } from '../slices/ordersApiSlice';
 import { clearCartItems } from '../slices/cartSlice';
 import { CheckoutSteps } from "../components/CheckoutSteps";
@@ -27,19 +26,20 @@ export const PlaceOrderScreen = () => {
     }, [cart.paymentMethod, cart.shippingAddress.address, navigate]);
 
     const dispatch = useDispatch();
+
     const placeOrderHandler = async () => {
         try {
-        const res = await createOrder({
-            orderItems: cart.cartItems,
-            shippingAddress: cart.shippingAddress,
-            paymentMethod: cart.paymentMethod,
-            itemsPrice: cart.itemsPrice,
-            shippingPrice: cart.shippingPrice,
-            taxPrice: cart.taxPrice,
-            totalPrice: cart.totalPrice,
-        }).unwrap();
-        dispatch(clearCartItems());
-        navigate(`/order/${res._id}`);
+            const res = await createOrder({
+                orderItems: cart.cartItems,
+                shippingAddress: cart.shippingAddress,
+                paymentMethod: cart.paymentMethod,
+                itemsPrice: cart.itemsPrice,
+                shippingPrice: cart.shippingPrice,
+                taxPrice: cart.taxPrice,
+                totalPrice: cart.totalPrice,
+            }).unwrap();
+            dispatch(clearCartItems());
+            navigate(`/order/${res._id}`);
         } catch (err) {
             toast.error(err);
         }
@@ -78,7 +78,7 @@ export const PlaceOrderScreen = () => {
                                         {cart.cartItems.map((item, index) => (
                                             <div key={index}>
                                                 <div className="mt-5 flex flex-col md:flex-row items-center">
-                                                    <div className="w-1/3 duration-300 hover:-translate-y-2">
+                                                    <div className="md:w-1/3 duration-300 hover:-translate-y-2">
                                                         <Link to={`/product/${item._id}`}>
                                                             <Image 
                                                                     src={item.image}
@@ -89,7 +89,7 @@ export const PlaceOrderScreen = () => {
                                                         </Link>
                                                     </div>
                                                     <div className="md:w-1/3 flex items-center">
-                                                        <p className="md:w-2/3 text-buttonsColor product-title">{item.name}</p> 
+                                                        <p className="md:w-2/3 text-buttonsColor product-title ml-2">{item.name}</p> 
                                                     </div>
                                                     <div className="flex md:w-2/3 items-center">
                                                         <strong className="text-md uppercase text-coverColor mr-2">Total: </strong>
