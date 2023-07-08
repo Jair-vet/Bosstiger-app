@@ -17,7 +17,11 @@ export const CartScreen = () => {
 
     const removeFromCartHandler = (id) => {
         dispatch(removeFromCart(id));
-      };
+    };
+
+    const checkoutHandler = () => {
+        navigate('/login?redirect=/shipping');
+    };
 
 
   return (
@@ -107,6 +111,8 @@ export const CartScreen = () => {
                                     : 'bg-primaryColor w-3/4 m-5 p-1 rounded-md duration-300 hover:bg-primaryColorDark hover:-translate-y-2 shadow-lg' 
                                 }
                                 disabled={cartItems === 0}
+                                type="button"
+                                onClick={checkoutHandler}
 
                             >
                                Proceder a Pagar
