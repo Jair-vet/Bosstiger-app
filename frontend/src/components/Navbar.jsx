@@ -3,6 +3,7 @@ import { FaShoppingCart, FaUser } from 'react-icons/fa';
 import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import { Dropdown } from './Dropdown';
+import { AdminDropdown } from './AdminDropdown';
 
 export const Navbar = () => {
 
@@ -68,8 +69,17 @@ export const Navbar = () => {
                             <>
                                
                             </>
-                        )
+                        ) 
                     }
+                    <div>
+                        {userInfo && userInfo.isAdmin && (
+                            <>
+                                <AdminDropdown 
+                                    title={ 'Admin' }
+                                />
+                            </>
+                        )}
+                    </div>
                 </div>
 
         </div>
