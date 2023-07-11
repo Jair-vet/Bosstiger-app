@@ -144,7 +144,7 @@ export const OrderScreen = () => {
                                                 {order.isDelivered ? (
                                                     <div className='flex p-4 justify-end'>
                                                         <p className='mr-2 font-bold text-buttonsColor'>Delivered on</p>
-                                                        <p className='text-greenPrice'>{order.deliveredAt}</p>
+                                                        <p className='text-greenPrice'>{order.deliveredAt.substring(0, 10)}</p>
                                                     </div>
                                                 ) : (
                                                     <div className='flex p-4 justify-end'>
@@ -166,7 +166,7 @@ export const OrderScreen = () => {
                                                 {order.isPaid ? (
                                                     <div className='flex mt-3'>
                                                         <p className='mr-2 font-bold text-buttonsColor'>Paid on</p>
-                                                        <p className='text-greenPrice'>{order.paidAt}</p>
+                                                        <p className='text-greenPrice'>{order.paidAt.substring(0, 10)}</p>
                                                     </div>
                                                 ) : (
                                                     <div className='flex'>
@@ -253,33 +253,54 @@ export const OrderScreen = () => {
                                             {
                                                 !order.isPaid && (
                                                     <div className='mt-8'>
-                                                        {loadingPay && ( <div className='h-screen flex w-full items-center justify-center'>
-                                                                            <h2 className='text-3xl text-center font-bold text-darkColor'>Loading...</h2>
-                                                                        </div>)
+                                                        {loadingPay && 
+                                                            ( <div className='h-screen flex w-full items-center justify-center'>
+                                                                <h2 className='text-3xl text-center font-bold text-darkColor'>Loading...</h2>
+                                                            </div>)
                                                         }
-                                                        {isPending ?   (<div className='h-screen flex w-full items-center justify-center'>
-                                                                            <h2 className='text-3xl text-center font-bold text-darkColor'>Loading...</h2>
-                                                                        </div>) 
-                                                                    : (
-                                                                        <div>
-                                                                            {/* <button onClick={ onApproveTest }>
-                                                                                Test pay Order
-                                                                            </button> */}
-                                                                            <div>
-                                                                                <PayPalButtons 
-                                                                                    createOrder={ createOrder }
-                                                                                    onApprove={ onApprove }
-                                                                                    onError={onError}
-                                                                                >
+                                                        {isPending ?   
+                                                            (<div className='h-screen flex w-full items-center justify-center'>
+                                                                <h2 className='text-3xl text-center font-bold text-darkColor'>Loading...</h2>
+                                                            </div>) 
+                                                        : (
+                                                                <div>
+                                                                    {/* <button onClick={ onApproveTest }>
+                                                                        Test pay Order
+                                                                    </button> */}
+                                                                    <div>
+                                                                        <PayPalButtons 
+                                                                            createOrder={ createOrder }
+                                                                            onApprove={ onApprove }
+                                                                            onError={onError}
+                                                                        >
 
-                                                                                </PayPalButtons>
-                                                                            </div>
-                                                                        </div>
-                                                                    )
+                                                                        </PayPalButtons>
+                                                                    </div>
+                                                                </div>
+                                                            )
                                                         }
                                                     </div>
-                                                )
-                                            }
+                                                )}
+                                            {/* Delivered status */}
+                                            <div>
+                                                { loadingDeliver && 
+                                                    ( <div className='h-screen flex w-full items-center justify-center'>
+                                                        <h2 className='text-3xl text-center font-bold text-darkColor'>Loading...</h2>
+                                                    </div>)
+                                                }
+                                                { userInfo && userInfo.isAdmin && order.isPaid && !order.isDelivered && (
+                                                    <div className='flex items-center justify-center'>
+                                                        <button
+                                                            type="submit"
+                                                            className='mt-4 text-lightColor ml-2 bg-secondaryColor uppercase rounded-md px-2 py-1 text-center shadow-xl 
+                                                                    transition duration-500 hover:-translate-y-2 hover:bg-primaryColor'
+                                                            onClick={deliverHandler}
+                                                        >
+                                                            Mark as Delivered
+                                                        </button>
+                                                    </div>
+                                                )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
