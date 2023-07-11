@@ -1,4 +1,5 @@
 import { FormContainer } from "../components/FormContainer"
+import {  Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FaTimes } from 'react-icons/fa';
@@ -49,7 +50,7 @@ export const ProfileScreen = () => {
     };
   return (
     <div className="h-fit flex md:flex md:flex-row flex-col w-full items-center justify-center md:mt-[200px] mt-[100px]">
-        <div className="shadow-xl p-4 rounded-xl bg-bgGray md:w-1/3 w-1/2">
+        <div className="shadow-xl p-4 rounded-xl bg-bgGray md:w-1/3">
             <div>
                 <h2 className="text-center text-3xl font-bold p-4 uppercase text-lightColor">User<span className="text-primaryColor"> Profile</span></h2>
 
@@ -117,8 +118,61 @@ export const ProfileScreen = () => {
                 </form>
             </div>
         </div>
-        <div className="w-1/2 shadow-xl p-4 rounded-xl bg-bgGray ml-3 md:mt-0 mt-8">
-            Column
+        <div className="md:w-1/2 shadow-xl p-4 rounded-xl bg-bgGray md:ml-6 md:mt-0 mt-8 mb-20">
+            <h2 className="text-center text-3xl font-bold p-4 uppercase text-lightColor">My<span className="text-primaryColor"> Orders</span></h2>
+
+            <div className=" flex items-center justify-center">
+                <thead>
+                    <tr>
+                        <th className="border border-lightColor text-blueDark">ID</th>
+                        <th className="border border-lightColor text-blueDark">DATE</th>
+                        <th className="border border-lightColor text-blueDark">TOTAL</th>
+                        <th className="border border-lightColor text-blueDark">PAID</th>
+                        <th className="border border-lightColor text-blueDark">ENVIO</th>
+                        <th></th>
+                    </tr>
+                    <tbody>
+                        { orders?.map((order) => (
+                            <tr key={order._id}>
+                                <td className="border-x px-1 py-2">{order._id}</td>
+                                <td className="border-x px-1 py-2">{order.createdAt.substring(0, 10)}</td>
+                                <td className="border-x px-1 py-2">${order.totalPrice}</td>
+                                <td className="border-x px-1 py-2">
+                                    <div className="flex items-center justify-center">
+                                        {order.isPaid ? (
+                                            <div className="text-greenBorder">
+                                                {order.paidAt.substring(0, 10)}
+                                            </div>
+                                        ) : (
+                                            <FaTimes style={{ color: 'red' }} />
+                                        )}
+                                    </div>
+                                </td>
+                                <td className="border-x">
+                                    <div className="flex items-center justify-center">
+                                        {order.isDelivered ? (
+                                            order.deliveredAt.substring(0, 10)
+                                        ) : (
+                                            <FaTimes style={{ color: 'red' }} />
+                                        )}
+                                    </div>
+                                </td>
+                                <td>
+                                    <Link to={`/order/${order._id}`}>
+                                        <button
+                                            type="submit"
+                                            className='ml-2 bg-secondaryColor uppercase rounded-md px-2 py-1 text-center shadow-xl 
+                                                    transition duration-500 hover:-translate-y-2 hover:bg-primaryColor'
+                                        >
+                                            Details
+                                        </button>
+                                    </Link>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </thead>
+            </div>
         </div>
     </div>
   )
