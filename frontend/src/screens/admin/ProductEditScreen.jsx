@@ -43,7 +43,6 @@ export const ProductEditScreen = () => {
         name,
         price,
         image,
-        brand,
         category,
         description,
         countInStock,
@@ -61,7 +60,6 @@ export const ProductEditScreen = () => {
       setName(product.name);
       setPrice(product.price);
       setImage(product.image);
-      setBrand(product.brand);
       setCategory(product.category);
       setCountInStock(product.countInStock);
       setDescription(product.description);

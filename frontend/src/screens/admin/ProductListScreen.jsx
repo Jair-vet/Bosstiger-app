@@ -16,7 +16,6 @@ export const ProductListScreen = () => {
     const { data, isLoading, error, refetch } = useGetProductsQuery({
         pageNumber,
     });
-    console.log(data);
 
     const [deleteProduct, { isLoading: loadingDelete }] =
         useDeleteProductMutation();
