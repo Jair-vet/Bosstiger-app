@@ -2,7 +2,7 @@ import { Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLogoutMutation } from '../slices/usersApiSlice';
 import { logout } from '../slices/authSlice';
 
@@ -52,15 +52,15 @@ export const Dropdown = ({user}) => {
             <div className="py-1 hover:text-lightColor">
                 <Menu.Item>
                     {({ active }) => (
-                    <a
-                        href="#"
+                    <Link
+                        to="/profile"
                         className={classNames(
                         active ? 'text-primaryColor' : 'text-secondaryColor ',
                             'block px-4 py-2 text-sm uppercase hover:text-lightColor'
                         )}
                     >
                         Profile
-                    </a>
+                    </Link>
                     )}
                 </Menu.Item>
                 
