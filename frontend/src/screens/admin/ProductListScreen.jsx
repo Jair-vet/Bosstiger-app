@@ -53,7 +53,7 @@ export const ProductListScreen = () => {
         <div className="h-fit flex md:flex md:flex-row flex-col w-full items-center justify-center">
             <div>
                 {/* Create Product Button */}
-                <div>
+                <div className='flex md:justify-end justify-center mb-5'>
                     <button
                         type="submit"
                         className='flex justify-center items-center text-lightColor ml-2 bg-secondaryColor uppercase rounded-md px-2 py-1 text-center shadow-xl 
