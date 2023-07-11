@@ -18,6 +18,7 @@ import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { ProfileScreen } from './screens/ProfileScreen';
 import { OrderListScreen } from './screens/admin/OrderListScreen';
 import { ProductListScreen } from './screens/admin/ProductListScreen';
+import { ProductEditScreen } from './screens/admin/ProductEditScreen';
 
 
 
@@ -70,6 +71,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/productlist",
         element: <ProductListScreen />,
+      },
+      {
+        path: "/admin/product/:id/edit",
+        element: <ProductEditScreen />,
       },
     ],
   },
