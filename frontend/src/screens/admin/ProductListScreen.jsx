@@ -106,23 +106,21 @@ export const ProductListScreen = () => {
                                         <td className="border-lightColor border-x px-3 py-2">${product.price}</td>
                                         <td className="border-lightColor border-x px-1 py-2">{product.category}</td>
                                         <td>
-                                            <div className='flex gap-4'>
-                                                <div className="flex items-center justify-center duration-300 hover:scale-125">
-                                                    <Link to={`/admin/product/${product._id}/edit`}>
-                                                        <button variant='light' className='btn-sm mx-2'>
-                                                            <FaEdit className='text-skyblueColor'/>
-                                                        </button>
-                                                    </Link>
-                                                </div>
-                                                <div className="flex items-center justify-center duration-300 hover:scale-125">
-                                                    <button
-                                                        variant='danger'
-                                                        className='btn-sm'
-                                                        onClick={() => deleteHandler(product._id)}
-                                                        >
-                                                        <FaTrash className='text-redColor' />
-                                                    </button>
-                                                </div>
+                                            <Link to={`/admin/product/${product._id}/edit`} className='flex items-center justify-center duration-300 hover:scale-125'>
+                                                <button variant='light' className='btn-sm mx-2'>
+                                                    <FaEdit className='text-skyblueColor'/>
+                                                </button>
+                                            </Link>
+                                        </td>
+                                        <td>
+                                            <div className="flex items-center justify-center duration-300 hover:scale-125">
+                                                <button
+                                                    variant='danger'
+                                                    className='btn-sm'
+                                                    onClick={() => deleteHandler(product._id)}
+                                                    >
+                                                    <FaTrash className='text-redColor' />
+                                                </button>
                                             </div>
                                         </td>
                                     </tr>

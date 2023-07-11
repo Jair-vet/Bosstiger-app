@@ -20,7 +20,7 @@ export const HomePage = () => {
             (
               <div className='h-screen flex w-full items-center justify-center'>
                   <p className='text-3xl text-center font-bold text-redColor'>
-                  { error?.data.message || error.error }
+                  { error?.data?.message || error.error }
                   </p>
               </div>
             ) 
