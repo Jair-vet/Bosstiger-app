@@ -17,6 +17,7 @@ import { OrderScreen } from './screens/OrderScreen';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import { ProfileScreen } from './screens/ProfileScreen';
 import { OrderListScreen } from './screens/admin/OrderListScreen';
+import { ProductListScreen } from './screens/admin/ProductListScreen';
 
 
 
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/orderlist",
         element: <OrderListScreen />,
+      },
+      {
+        path: "/admin/productlist",
+        element: <ProductListScreen />,
       },
     ],
   },

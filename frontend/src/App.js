@@ -17,6 +17,7 @@ import { OrderScreen } from './screens/OrderScreen';
 import { ProfileScreen } from './screens/ProfileScreen';
 import { AdminRoute } from './components/AdminRoute';
 import { OrderListScreen } from './screens/admin/OrderListScreen';
+import { ProductListScreen } from './screens/admin/ProductListScreen';
 
 
 
@@ -46,6 +47,7 @@ const App = () => {
                 {/* Admin Route */}
                 <Route path='' element={ <AdminRoute />} >
                   <Route path='/admin/orderlist' element={ <OrderListScreen />} />
+                  <Route path='/admin/productlist' element={ <ProductListScreen />} />
                 </Route>
           </Routes>
         </div>
