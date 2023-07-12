@@ -6,7 +6,6 @@ import {
   useUpdateProductMutation,
   useUploadProductImageMutation,
 } from '../../slices/productsApiSlice';
-import { FormContainer } from '../../components/FormContainer';
 
 
 export const ProductEditScreen = () => {
@@ -15,7 +14,7 @@ export const ProductEditScreen = () => {
   const [name, setName] = useState('');
   const [price, setPrice] = useState(0);
   const [image, setImage] = useState('');
-  const [brand, setBrand] = useState('');
+  const [offert, setOffert] = useState(0);
   const [category, setCategory] = useState('');
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState('');
@@ -42,6 +41,7 @@ export const ProductEditScreen = () => {
         productId,
         name,
         price,
+        offert,
         image,
         category,
         description,
@@ -59,6 +59,7 @@ export const ProductEditScreen = () => {
     if (product) {
       setName(product.name);
       setPrice(product.price);
+      setOffert(product.offert);
       setImage(product.image);
       setCategory(product.category);
       setCountInStock(product.countInStock);
@@ -117,6 +118,18 @@ export const ProductEditScreen = () => {
                           type="number"
                           value={price}
                           onChange={(e) => setPrice(e.target.value)}
+                      />
+                  </div>
+                  {/* Offert */}
+                  <div className="flex flex-col w-full">
+                      <label className="text-lightColor uppercase">Oferta</label>
+                      <input 
+                          className="bg-bgTextField text-secondaryColor p-3 rounded-md mb-3 shadow-md focus:outline-none focus:ring 
+                              focus:ring-primaryColor"
+                          placeholder="Enter Offert"
+                          type="number"
+                          value={offert}
+                          onChange={(e) => setOffert(e.target.value)}
                       />
                   </div>
                   {/* Count in Stock */}

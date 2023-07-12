@@ -93,7 +93,9 @@ export const ProductListScreen = () => {
                                     <th className="border border-lightColor text-blueDark">ID</th>
                                     <th className="border border-lightColor text-blueDark">NAME</th>
                                     <th className="border border-lightColor text-blueDark">PRICE</th>
+                                    <th className="border border-lightColor text-blueDark">OFFERT</th>
                                     <th className="border border-lightColor text-blueDark">CATEGORY</th>
+                                    <th className="border border-lightColor text-blueDark">STOCK</th>
                                     <th></th>
                                 </tr>
                             </thead>
@@ -103,7 +105,9 @@ export const ProductListScreen = () => {
                                         <td className="border-lightColor border-x px-3 py-2">{product._id}</td>
                                         <td className="border-lightColor border-x px-1 py-2">{product.name}</td>
                                         <td className="border-lightColor border-x px-3 py-2">${product.price}</td>
+                                        <td className="border-lightColor border-x px-3 py-2">${product.offert}</td>
                                         <td className="border-lightColor border-x px-1 py-2">{product.category}</td>
+                                        <td className="border-lightColor border-x px-1 py-2">{product.countInStock}</td>
                                         <td>
                                             <Link to={`/admin/product/${product._id}/edit`} className='flex items-center justify-center duration-300 hover:scale-125'>
                                                 <button variant='light' className='btn-sm mx-2'>
