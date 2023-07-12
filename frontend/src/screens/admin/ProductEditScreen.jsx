@@ -172,9 +172,8 @@ export const ProductEditScreen = () => {
                           <span className="mt-2 text-base leading-normal">Select a file</span>
                           <input type='file' className="hidden" onChange={uploadFileHandler} />
                       </label>
-
-
                   </div>
+                  {/* Button */}
                   <button
                       type="submit"
                       className='w-1/2 mt-3 bg-secondaryColor uppercase rounded-md py-2 text-center shadow-xl 
