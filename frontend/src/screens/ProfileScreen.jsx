@@ -122,15 +122,17 @@ export const ProfileScreen = () => {
             <h2 className="text-center text-3xl font-bold p-4 uppercase text-lightColor">My<span className="text-primaryColor"> Orders</span></h2>
 
             <div className=" flex items-center justify-center">
-                <thead>
-                    <tr>
-                        <th className="border border-lightColor text-blueDark">ID</th>
-                        <th className="border border-lightColor text-blueDark">DATE</th>
-                        <th className="border border-lightColor text-blueDark">TOTAL</th>
-                        <th className="border border-lightColor text-blueDark">PAID</th>
-                        <th className="border border-lightColor text-blueDark">ENVIO</th>
-                        <th></th>
-                    </tr>
+                <table>
+                    <thead>
+                        <tr>
+                            <th className="border border-lightColor text-blueDark">ID</th>
+                            <th className="border border-lightColor text-blueDark">DATE</th>
+                            <th className="border border-lightColor text-blueDark">TOTAL</th>
+                            <th className="border border-lightColor text-blueDark">PAID</th>
+                            <th className="border border-lightColor text-blueDark">ENVIO</th>
+                            <th></th>
+                        </tr>
+                    </thead>
                     <tbody>
                         { orders?.map((order) => (
                             <tr key={order._id}>
@@ -171,7 +173,7 @@ export const ProfileScreen = () => {
                             </tr>
                         ))}
                     </tbody>
-                </thead>
+                </table>
             </div>
         </div>
     </div>
