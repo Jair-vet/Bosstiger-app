@@ -4,6 +4,7 @@ import { useGetProductDetailsQuery, useCreateReviewMutation } from '../slices/pr
 import { useState } from 'react'
 import { addToCart } from '../slices/cartSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import { toast } from 'react-toastify';
 
 export const ProductScreen = () => {
     
@@ -179,17 +180,20 @@ export const ProductScreen = () => {
                                             {product.reviews.lenght === 0 && <p>No Reviews</p>}
                                         </div>
                                         <div className='w-80 bg-blue rounded-md outline-none ring-1 ring-borderBlue shadow-md'>
-                                            <h2 className='p-4 text-lg text-borderBlue'>No Reviews</h2>
-                                            {product.reviews.map((review) => (
-                                                <ul key={review._id}>
-                                                    <li>
-                                                        <strong>{review.name}</strong>
-                                                        <Rating value={review.rating}/>
-                                                        <p>{review.createdAt.substring(0, 10)}</p>
-                                                        <p>{review.comment}</p>
-                                                    </li>
-                                                </ul>
-                                            ))}
+                                            <div className='flex p-3'>
+                                                {product.reviews.map((review) => (
+                                                    <ul key={review._id}>
+                                                        <li>
+                                                            <div className='flex justify-between'>
+                                                                <strong className='font-bold'>{review.name}</strong>
+                                                                <p className='text-end'>{review.createdAt.substring(0, 10)}</p>
+                                                            </div>
+                                                            <Rating value={review.rating}/>
+                                                            <p className='text-borderBlue'>{review.comment}</p>
+                                                        </li>
+                                                    </ul>
+                                                ))}
+                                            </div>
                                         </div>
                                          {/* Boton Regresar */}
                                         <div className='flex md:w-full md:justify-end md:mr-5'>
@@ -221,7 +225,11 @@ export const ProductScreen = () => {
                                                         <div className='flex flex-col m-4'>
                                                             <label className='text-primaryColor uppercase'>Rating</label>
                                                             <select className="w-full bg-bgTextField p-2 text-center rounded-md text-xl
-                                                                focus:outline-none focus:ring focus:ring-borderBlue text-grayColor">
+                                                                focus:outline-none focus:ring focus:ring-borderBlue text-grayColor"
+                                                                required
+                                                                value={rating}
+                                                                onChange={(e) => setRating(e.target.value)}
+                                                            >
                                                                 <option value='' >Select...</option>
                                                                 <option value='1'>Poor</option>
                                                                 <option value='2'>Fair</option>
