@@ -21,6 +21,7 @@ import { ProductListScreen } from './screens/admin/ProductListScreen';
 import { ProductEditScreen } from './screens/admin/ProductEditScreen';
 import { UserListScreen } from './screens/admin/UserListScreen';
 import { UserEditScreen } from './screens/admin/UserEditScreen';
+import { HomePage } from './screens/HomePage';
 
 
 
@@ -85,6 +86,10 @@ const router = createBrowserRouter([
       {
         path: "/admin/user/:id/edit",
         element: <UserEditScreen />,
+      },
+      {
+        path: "/page/:pageNumber",
+        element: <HomePage />,
       },
     ],
   },

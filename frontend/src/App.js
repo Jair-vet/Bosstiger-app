@@ -32,7 +32,8 @@ const App = () => {
 
         <div className='md:pt-0 pt-36 overflow-x-hidden h-screen'>
           <Routes>
-                <Route path='/' element={ <HomePage />} exact />
+                <Route index={true} path='/' element={ <HomePage />} exact />
+                <Route path='/page/:pageNumber' element={ <HomePage />} />
                 <Route path='/product/:id' element={ <ProductScreen />} />
                 <Route path='/cart' element={ <CartScreen />} />
                 <Route path='/login' element={ <LoginScreen />} />
