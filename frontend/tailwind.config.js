@@ -9,6 +9,8 @@ module.exports = {
     colors: {
       primaryColor: '#3195ff',
       primaryColorDark: '#2B81DC',
+      blue: '#B1CEDD',
+      borderBlue: '#166F9D',
       secondaryColor:' #333',
       darkColor: '#000',
       lightColor: '#f4f4f4',
