@@ -2,6 +2,8 @@ import { Product } from '../components/Product'
 import { Link, useParams } from 'react-router-dom'
 import { useGetProductsQuery } from '../slices/productsApiSlice'
 import { Paginate } from '../components/Paginate'
+import { ProductCarousel } from '../components/ProductCarousel'
+import { Meta } from '../components/Meta'
 
 export const HomePage = () => {
 
@@ -29,6 +31,7 @@ export const HomePage = () => {
             ) 
           : 
             (<>
+              <Meta title='BoosTiger'/>
               <div className='p-2 container md:pt-26 pt-36'>
                   <h1 className='text-center text-2xl uppercase font-sans font-bold'>Lastest <span>Products</span></h1>
                   <div className='p-8 grid gap-5 lg:grid-cols-4 md:grid-cols-3 grid-cols-2'>
@@ -50,16 +53,7 @@ export const HomePage = () => {
               </div>
             </>) 
         }
-        { keyword 
-        && 
-          <Link
-            to='/'
-            className='px-8 py-2 bg-secondaryColor w-[200px] rounded-md mt-[150px] ml-[40px]
-              text-center shadow-xl transition duration-500 hover:-translate-y-1 hover:bg-primaryColor'
-          >
-            Regresar
-          </Link> 
-      }
+        
       
     </>
   )
