@@ -92,7 +92,15 @@ const router = createBrowserRouter([
         element: <UserEditScreen />,
       },
       {
+        path: "/search/:keyword",
+        element: <HomePage />,
+      },
+      {
         path: "/page/:pageNumber",
+        element: <HomePage />,
+      },
+      {
+        path: "/search/:keyword/page/:pageNumber",
         element: <HomePage />,
       },
     ],

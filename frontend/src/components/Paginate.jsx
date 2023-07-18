@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-export const Paginate = ({ pages, page, isAdmin = false }) => {
+export const Paginate = ({ pages, page, isAdmin = false, keyword = '' }) => {
   return (
     <div className="flex justify-center h-fit items-center mt-[50px]">
         <nav className="">
@@ -10,7 +10,8 @@ export const Paginate = ({ pages, page, isAdmin = false }) => {
                         <li key={x + 1}>
                             <Link to={
                                 !isAdmin
-                                    ? `/page/${x + 1}`
+                                    ? keyword 
+                                        ? `/search/${keyword}/page/${x+1}` : `/page/${x + 1}`
                                     : `/admin/productlist/${x + 1}`
                                 }
                                 className={

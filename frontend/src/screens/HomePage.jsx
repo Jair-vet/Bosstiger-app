@@ -5,8 +5,8 @@ import { Paginate } from '../components/Paginate'
 
 export const HomePage = () => {
 
-  const { pageNumber } = useParams()
-  const { data, isLoading, error } = useGetProductsQuery({ pageNumber })
+  const { pageNumber, keyword } = useParams()
+  const { data, isLoading, error } = useGetProductsQuery({ keyword, pageNumber })
 
   return (
     <>
@@ -45,6 +45,7 @@ export const HomePage = () => {
                   <Paginate 
                     pages={data.pages}
                     page={data.page}
+                    keyword={keyword ? keyword : ''}
                   />
               </div>
             </>) 
