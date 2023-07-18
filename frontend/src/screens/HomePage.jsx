@@ -1,6 +1,7 @@
 import { Product } from '../components/Product'
 import { useParams } from 'react-router-dom'
 import { useGetProductsQuery } from '../slices/productsApiSlice'
+import { Paginate } from '../components/Paginate'
 
 export const HomePage = () => {
 
@@ -41,6 +42,10 @@ export const HomePage = () => {
 
                   {/* Catalogo */}
                   {/* <Catalogo /> */}
+                  <Paginate 
+                    pages={data.pages}
+                    page={data.page}
+                  />
               </div>
             </>) 
         }

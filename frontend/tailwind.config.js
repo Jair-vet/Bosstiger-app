@@ -33,6 +33,12 @@ module.exports = {
       bgColor: '#ADADAD',
       bgGray: '#B8B8B8',
       bgTextField: '#CBCDCE',
+      gray100: '#F3F4F6',
+      gray300: '#D1D5DB',
+      gray400: '#9CA3AF',
+      gray500: '#6B7280',
+      gray700: '#374151',
+      gray800: '#1F2937',
     },
     fontFamily: {
       sans: ['Barlow Semi Condensed', 'sans-serif'],
