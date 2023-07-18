@@ -1,5 +1,5 @@
 import { Product } from '../components/Product'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { useGetProductsQuery } from '../slices/productsApiSlice'
 import { Paginate } from '../components/Paginate'
 
@@ -50,6 +50,16 @@ export const HomePage = () => {
               </div>
             </>) 
         }
+        { keyword 
+        && 
+          <Link
+            to='/'
+            className='px-8 py-2 bg-secondaryColor w-[200px] rounded-md mt-[150px] ml-[40px]
+              text-center shadow-xl transition duration-500 hover:-translate-y-1 hover:bg-primaryColor'
+          >
+            Regresar
+          </Link> 
+      }
       
     </>
   )

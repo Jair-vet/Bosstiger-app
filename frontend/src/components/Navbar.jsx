@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import { Dropdown } from './Dropdown';
 import { AdminDropdown } from './AdminDropdown';
+import { SearchBox } from './SearchBox';
 
 export const Navbar = () => {
 
@@ -53,6 +54,9 @@ export const Navbar = () => {
                                 to="/login" 
                                 className="flex gap-2 text-xl uppercase text-lightColor font-bold font-sans"
                             ><FaUser /> Sign In</Link>
+                        </li>
+                        <li>
+                            <SearchBox />
                         </li>
                     </ul>
                 </div>
